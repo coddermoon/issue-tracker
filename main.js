@@ -1,3 +1,7 @@
+
+
+
+
 document.getElementById('issueInputForm').addEventListener('submit', submitIssue);
 
 function submitIssue(e) {
@@ -47,8 +51,11 @@ const deleteIssue = id => {
 }
 
 const fetchIssues = () => {
+ 
   const issues = JSON.parse(localStorage.getItem('issues'));
   const issuesList = document.getElementById('issuesList');
+
+
   issuesList.innerHTML = '';
 
  
