@@ -31,7 +31,8 @@ const closeIssue = id => {
 
 const deleteIssue = id => {
   const issues = JSON.parse(localStorage.getItem('issues'));
-  const remainingIssues = issues.filter( issue.id !== id )
+  // console.log(issues)
+  const remainingIssues = issues.filter( issue=>issue.id !== id)
   localStorage.setItem('issues', JSON.stringify(remainingIssues));
 }
 
@@ -39,6 +40,8 @@ const fetchIssues = () => {
   const issues = JSON.parse(localStorage.getItem('issues'));
   const issuesList = document.getElementById('issuesList');
   issuesList.innerHTML = '';
+
+ 
 
   for (var i = 0; i < issues.length; i++) {
     const {id, description, severity, assignedTo, status} = issues[i];
